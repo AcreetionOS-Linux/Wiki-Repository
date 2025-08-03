@@ -8,9 +8,9 @@ Maintained primarily by the talented **Darren Clift**, this edition gets the ful
 
 Cinnamon offers a **traditional, sleek, and user-friendly desktop** that feels familiar yet modern. Whether you're a Linux newbie or a seasoned pro, its **customizable interface** lets you make your workspace truly yours — no headaches, just smooth sailing.
 
-## Big Thanks to Linux Mint’s Cinnamon Team!
+## Looking Ahead: Considering libadapta
 
-We ship **libadapta**, a stunning GTK theme crafted by the Linux Mint Cinnamon team. Their dedication to style and usability is what makes this variant not only functional but downright beautiful. We tip our hats to them!
+We are currently **considering integrating libadapta**, the GTK theme developed by the Cinnamon team at Linux Mint. Their dedication to style and usability is inspiring, and libadapta could help make the Cinnamon variant even more visually cohesive and polished.
 
 ## Your Software, Your Way
 
