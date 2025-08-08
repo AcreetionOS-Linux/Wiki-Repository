@@ -94,3 +94,4 @@ Once everything is installed, you can launch them from your applications menu:
 ---
 
 ✅ **You’re now ready to enjoy gaming on Linux!**
+
