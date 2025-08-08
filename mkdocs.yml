@@ -6,5 +6,6 @@ nav:
   - Home: index.md
   - AcreetionOS Cinnamon: AcreetionOS-Cinnamon.md
   - AcreetionOS GNOME: AcreetionOS-GNOME.md
-  - StormOS: StormOS.md
+  - Benchmarking on AcreetionOS: benchmark.md
   - Gaming in it's Simplest Form: gaming.md
+  - StormOS: StormOS.md
