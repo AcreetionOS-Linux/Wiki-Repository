@@ -33,3 +33,9 @@ html_static_path = ['_static']
 
 autodoc_member_order = 'bysource'
 autoclass_content = 'both'
+
+# Force Dark
+
+html_theme_options = {
+    "default_dark_mode": True,
+}
