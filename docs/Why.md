@@ -41,6 +41,12 @@ It doesn’t matter where you come from, what you believe, or what challenges yo
 The only thing we ask is that we leave politics at the door.  
 This way, we can all collaborate in a **respectful, fun, and entertaining environment**—where the focus is on building something amazing together.
 
+## Non-Traditional Workflows
+We don’t force everyone into a corporate-style model. People work best in different ways, and we respect that.  
+Some of us are neurodivergent, some of us have unique working habits, and we believe it’s unfair to demand everyone fit into a rigid mold. Our workflow adapts to **each person’s strengths and needs**—because we aren’t corporate, we are inclusive, and we are a community.
+
+We believe that when people can work in the way that’s best for them, they do their best work—and that benefits everyone who uses AcreetionOS.
+
 ## What We Offer
 - **A clear, easy-to-read wiki** for guidance.
 - **Our own GitLab** for projects and collaboration.
