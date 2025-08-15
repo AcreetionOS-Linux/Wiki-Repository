@@ -47,6 +47,12 @@ Some of us are neurodivergent, some of us have unique working habits, and we bel
 
 We believe that when people can work in the way that’s best for them, they do their best work—and that benefits everyone who uses AcreetionOS.
 
+## Respecting Everyone’s Time
+Time is valuable—for our users and our developers. We respect it.  
+We design AcreetionOS so that users don’t have to waste hours fixing problems or hunting down answers. And we respect our developers’ time by avoiding unnecessary bureaucracy or pressure.  
+
+Our standards are high, but our appreciation for the people involved is even higher. We give **absolute leniency** to our contributors, because we know they are giving us something even more valuable than code: their time, energy, and heart.
+
 ## What We Offer
 - **A clear, easy-to-read wiki** for guidance.
 - **Our own GitLab** for projects and collaboration.
