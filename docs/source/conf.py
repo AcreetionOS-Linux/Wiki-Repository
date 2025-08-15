@@ -1,28 +1,41 @@
 # Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'AcreetionOS'
-copyright = '2025, Natalie Spiva, Darren Clift, Adran'
-author = 'Natalie Spiva, Darren Clift, Adran'
-release = '1'
+copyright = '2025, AcreetionOS Project'
+author = 'AcreetionOS Team'
+release = '1.0.0'
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',      # For Google/NumPy style docstrings
+    'sphinx.ext.viewcode',      # Add links to highlighted source code
+    'sphinx.ext.githubpages',   # Creates .nojekyll for GitHub Pages
+]
 
 templates_path = ['_templates']
-exclude_patterns = []
-
-language = 'make html'
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'furo'  # Use ReadTheDocs theme
+
 html_static_path = ['_static']
+
+# -- Options for autodoc -----------------------------------------------------
+
+autodoc_member_order = 'bysource'
+autoclass_content = 'both'
+
+# Force Dark
+
+html_theme_options = {
+      "color_scheme": "dark"
+}
