@@ -14,10 +14,15 @@ Natalie and Darren lead the development. Adran helps write our clear, easy-to-fo
 We know some people hear “family project” and worry it means unprofessional. Not here. To us, it means **we take things personally**—we care deeply about what we’re making and about the people using it. We treat every user like part of our extended family.
 
 ## The Problem
-- Many computers that still work fine can’t handle the latest versions of Windows or macOS.
-- Big tech companies are prioritizing their bottom line, not your experience.
-- Privacy is treated like a luxury feature instead of a basic right.
-- People want something modern and easy, but not at the cost of being watched.
+Arch Linux is powerful, but it’s not friendly to new users.  
+Most of it starts in a **command-line environment**, and while some people enjoy that, it’s not the way most people want to use their computers. If people are going to adopt an operating system, it has to be easy to install, easy to use, and easy to live with.
+
+It should be:
+- A place where you can choose to learn more if you want to, or simply relax and watch your shows.
+- A place where you can easily get the software you need without digging through manuals.
+- A place where you’re not afraid of breaking things just by trying something new.
+- A place where you **don’t freak out on first boot**—you just know it works.
+- A place where questions are welcomed and appreciated, not dismissed.
 
 ## The AcreetionOS Solution
 - **Lightweight and fast** so even older machines can run smoothly.
@@ -30,7 +35,10 @@ We know some people hear “family project” and worry it means unprofessional.
 We work every day to make AcreetionOS better. We use automation to save time and improve quality, so we can focus on helping people. One day, we hope to make the world a better place—**one line of code at a time**.
 
 ## Inclusive and Respectful
-Our community is open to everyone. We welcome people of all backgrounds, skills, and experiences. The only thing we ask is that we leave politics at the door.  
+Our community is open to everyone. We welcome people of **all backgrounds, skills, and experiences**.  
+It doesn’t matter where you come from, what you believe, or what challenges you face—**you have a place here**. Disabilities, limitations, and differences don’t exclude anyone from our community.  
+
+The only thing we ask is that we leave politics at the door.  
 This way, we can all collaborate in a **respectful, fun, and entertaining environment**—where the focus is on building something amazing together.
 
 ## What We Offer
@@ -41,6 +49,6 @@ This way, we can all collaborate in a **respectful, fun, and entertaining enviro
 
 ---
 
-> AcreetionOS exists because we believe you deserve a computer that works for you, stays out of your business, and respects your privacy—without slowing you down.
+> We started with Arch Linux. We loved its power and flexibility, but we saw how hard it was for new users to get started. So we built AcreetionOS—a system that keeps the best parts of Arch but makes it welcoming, stable, and ready for anyone to use from the very first boot.
 
 <!-- Written with the help of ChatGPT (GPT-5), August 2025 -->
