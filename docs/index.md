@@ -41,8 +41,7 @@ While some systems constantly push updates that break things, AcreetionOS takes 
 We understand that not everyone uses their computer the same way, so we give you choices:
 
 - **Cinnamon Edition** – modern but familiar, great for switching from Windows  
-- **GNOME Edition** – sleek and focused, great for getting things done  
-- **XFCE Edition [StormOS]** – ultra-lightweight, for older computers or performance fans, and those wanting an experimental experience.  
+- **GNOME Edition** – sleek and focused, great for getting things done    
 
 No matter the edition, AcreetionOS stays fast, stable, and easy to use.
 
