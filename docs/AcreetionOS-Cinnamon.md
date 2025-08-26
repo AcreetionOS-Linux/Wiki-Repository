@@ -33,6 +33,9 @@ You don’t need a beast of a machine to enjoy AcreetionOS Cinnamon. It runs smo
 - **30 GB HDD/SSD storage**
 
 Perfect for everyday use on a wide range of hardware — from laptops to desktops.
+---
+This project is managed by **Darren Clift [, aka Linux Grandpa].**.
+
 
 ---
 
