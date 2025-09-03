@@ -15,6 +15,7 @@ release = '1.0.0'
 
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx_favicon'
     'sphinx.ext.napoleon',      # For Google/NumPy style docstrings
     'sphinx.ext.viewcode',      # Add links to highlighted source code
     'sphinx.ext.githubpages',   # Creates .nojekyll for GitHub Pages
@@ -39,3 +40,6 @@ autoclass_content = 'both'
 html_theme_options = {
       "color_scheme": "dark"
 }
+
+html_static_path = ['_static']
+html_favicon = 'acreetionos.ico'
