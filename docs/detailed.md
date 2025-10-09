@@ -30,7 +30,7 @@ Wait for the AcreetionOS Live Systerm to start. Select your Language and press N
 *** Uh oh this screen looks scary *** 
 No need to panic, that's why I'm here providing this installation guide. 
 <img src="./img/install/installer-4.png" />
-This screen is where we will be choosing the drivers for our computer. - I will split in into 3 sections; Kernel, CPU and GPU* 
+This screen is where we will be choosing the drivers for our computer. - I will split in into 3 sections; Kernel, CPU and GPU* (see footnote)
 <img src="./img/install/installer-5.png" />
 As I have AMD based system, I choose AMD drivers and AMD ucode options. Then click next.
 
@@ -121,5 +121,6 @@ But hey, if you’re a “manual and coffee” person — we love you too. ❤�
 
 Ready to experience computing that just works? AcreetionOS Cinnamon is waiting for you.
 
-*CPU = Central Processing Unit
-*GPU = Graphicz Processing Unit or Graphics Card.
+#### footnote
+CPU = Central Processing Unit
+GPU = Graphicz Processing Unit or Graphics Card.
