@@ -11,7 +11,7 @@ Welcome! This page will guide you through installing AcreetionOS. We keep it **a
 ### - Step 1
 
 Download the bootable USB creator from the AcreetionOS Website - [AcreetionOS USB Flasher](https://iso.acreetionos.org:8448/Flashing_Utility/dist/AcreetionOS_USB_Flasher_Setup_1.0.0.exe)! 
- image:: ../img/install/installer-1.PNG
+.. image:: ../img/install/installer-1.PNG
 
 ### - Step 2
 
@@ -62,8 +62,9 @@ In the screenshot below, I am erasing the HDD and creating it with a swap partit
 
 ### Step 4e - Username and Password Screen
 
-The next screen is where we will set up our username and password. I used the user demo and password of "acreetion". 
+The next screen is where we will set up our username and password. I used the user demo and password of "acreetion".
 There are 3 checkboxes underneath the text entry boxes; 'Require strong passwords', 'Log in automatically', and 'Use the same password for admistrator account'
+
 A black checkbox means the option is ***not*** selected; for this tutorial, I will disable strong passowrds and enable auto login.
 <img src="../img/install/installer-10.png" />
 
