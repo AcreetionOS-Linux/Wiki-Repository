@@ -11,16 +11,16 @@ Welcome! This page will guide you through installing AcreetionOS. We keep it **a
 ### - Step 1
 
 Download the bootable USB creator from the AcreetionOS Website - [AcreetionOS USB Flasher](https://iso.acreetionos.org:8448/Flashing_Utility/dist/AcreetionOS_USB_Flasher_Setup_1.0.0.exe)! 
-  <img src="../img/install/installer-1.png" />
+<img src="././img/install/installer-1.png" />
 
 ### - Step 2
 
 Choose your AcreetionOS flavour - Either Cinnamon, Gnome or StormOS and the mirror you want to use, or download it manually and burn it yourself. ***Not Recommended****
   <img src="../img/install/installer-2.png" />
   
-  [color=red !Windows version will follow with a Rufus Promt for putting the ISO onto a usb! [/color]
+<span style="color: red;"> !Windows version will follow with a Rufus Promt for putting the ISO onto a usb! </span>
  
- For linux install see the [main install doc](/installation.md)
+ For linux install see the [main install doc](./installation.md)
  
 ## Live Enviorment and Installing AcreetionOS
 
