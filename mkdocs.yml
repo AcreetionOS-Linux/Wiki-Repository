@@ -1,8 +1,8 @@
 site_name: AcreetionOS Docs
 theme:
   name: material
-  icon:
-   favicon: img/acreetionos.ico
+icon:
+  favicon: img/acreetionos.ico
 
 docs_dir: docs
 nav:
