@@ -1,127 +1,91 @@
 # AcreetionOS Installation Guide
 
-Welcome! This page will guide you through installing AcreetionOS. We keep it **as simple as possible** so even if you’ve never installed Linux before, you’ll be fine.  
-
-> **Important:** AcreetionOS currently requires an **active internet connection** to install.
+This guide provides instructions for installing AcreetionOS. We use the Calamares installer, which should be familiar to users who have installed other Linux distributions. An active internet connection is required for the installation.
 
 ---
 
-## 1. Choosing Your Installation Method
+## 1. Obtaining Installation Media
 
-You have two main ways to get AcreetionOS onto your computer:
+You have two options for creating a bootable USB drive:
 
-### **Option A – Use Our USB Flasher Utility** (Recommended)
-This is the easiest method. It handles downloading the ISO and writing it to your USB drive for you.
+### Option A: USB Flasher Utility (Recommended)
 
-- **Windows**:  
-  [Download AcreetionOS USB Flasher for Windows](https://iso.acreetionos.org:8448/Flashing_Utility/dist/AcreetionOS_USB_Flasher_Setup_1.0.0.exe)  
-  - Uses **Rufus** under the hood for USB writing because of Windows driver signing.  
-  - Just run it, follow the prompts, and you’re done.
+We provide a graphical utility that simplifies the process of downloading the ISO and writing it to a USB drive. 
 
-- **Linux**:  
-  [Download AcreetionOS USB Flasher for Linux (AppImage)](https://iso.acreetionos.org:8448/Flashing_Utility/dist/AcreetionOS%20USB%20Flasher-1.0.0.AppImage)  
-  **Important:**  
-  1. Make the AppImage **executable**:  
-     ```bash
-     chmod +x AcreetionOS\ USB\ Flasher-1.0.0.AppImage
-     ```
-  2. Install **FUSE** if it’s not already installed:  
-     - **Arch / Manjaro**:  
-       ```bash
-       sudo pacman -S fuse2
-       ```
-     - **Debian / Ubuntu / Linux Mint / Pop!_OS**:  
-       ```bash
-       sudo apt install fuse
-       ```
-     - **Fedora / RHEL / Rocky / AlmaLinux**:  
-       ```bash
-       sudo dnf install fuse
-       ```
-     - **openSUSE**:  
-       ```bash
-       sudo zypper install fuse
-       ```
-     - **Gentoo**:  
-       ```bash
-       sudo emerge sys-fs/fuse
-       ```
-  *(Runs on almost any Linux system without installation — no need for Flathub.)*
+*   **Windows:** [Download the AcreetionOS USB Flasher for Windows](https://iso.acreetionos.org:8448/Flashing_Utility/dist/AcreetionOS_USB_Flasher_Setup_1.0.0.exe). This utility uses Rufus internally.
+*   **Linux:** [Download the AcreetionOS USB Flasher for Linux (AppImage)](https://iso.acreetionos.org:8448/Flashing_Utility/dist/AcreetionOS%20USB%20Flasher-1.0.0.AppImage).
+
+To use the AppImage on Linux, you first need to make it executable:
+
+```bash
+chmod +x AcreetionOS_USB_Flasher-1.0.0.AppImage
+```
+
+You will also need to have FUSE installed. The package name varies depending on your distribution:
+
+*   **Arch Linux and derivatives:** `fuse2`
+*   **Debian, Ubuntu and derivatives:** `fuse`
+*   **Fedora and derivatives:** `fuse`
+*   **openSUSE:** `fuse`
+
+### Option B: Manual Installation
+
+Alternatively, you can download the ISO image directly from our website and use a tool of your choice to write it to a USB drive.
+
+1.  Download the desired ISO image from [https://acreetionos.org](https://acreetionos.org).
+2.  Use a utility such as `dd` or Etcher to write the ISO to a USB drive.
+
+For example, on Linux, you can use `dd`:
+
+```bash
+# Replace /dev/sdX with your USB device
+sudo dd if=/path/to/acreetionos.iso of=/dev/sdX bs=4M status=progress
+```
+
+**Warning:** Be careful to specify the correct device for `of`, as this command will overwrite the target device.
 
 ---
 
-### **Option B – Manual ISO Method**
-If you prefer doing it yourself:
+## 2. Booting and Installing
 
-1. Go to [https://acreetionos.org](https://acreetionos.org).
-2. Download the ISO you want.  
-   - Mirror links are available if the main server is down.
-3. Use your own USB writing tool (like Rufus on Windows or `dd` on Linux) to write it to a USB stick.  
-   - We have manual instructions right below the download links on our website.
-
----
-
-## 2. Installing AcreetionOS
-
-Once your USB is ready:
-
-1. Plug it into the computer you want to install AcreetionOS on.
-2. Boot from the USB (this is usually done by pressing **F12**, **F2**, or **Esc** during startup).
-3. When AcreetionOS starts, the **installer will automatically pop up**.
-4. Go step-by-step through the installer (we use **Calamares**, which is simple).
-5. **Internet is required** — the installer will download what it needs during setup.
-6. Once done, restart, remove the USB, and boot into AcreetionOS.
+1.  Insert the bootable USB drive into the target machine.
+2.  Reboot the machine and enter the boot menu (commonly by pressing F2, F10, F12, or DEL during startup).
+3.  Select the USB drive to boot from.
+4.  The AcreetionOS live environment will start, and the Calamares installer will launch automatically.
+5.  Follow the on-screen instructions to partition your drive and install the system.
+6.  Once the installation is complete, reboot the machine and remove the USB drive.
 
 ---
 
-## 3. What’s Included by Default
+## 3. Post-Installation
 
-We ship AcreetionOS with a selection of software we believe **every user will need**:
+AcreetionOS comes with a minimal set of pre-installed applications:
 
-- **Firefox** web browser (ready to go after install).
-- **Pamac** — a friendly software store where you can install and remove apps without touching the terminal.
-- Basic tools for everyday use.
+*   **Firefox:** Web browser
+*   **Pamac:** A graphical package manager for installing and updating software.
 
----
+### Installing Additional Software
 
-## 4. Installing Extra Apps
+AcreetionOS gives you access to a wide range of software through several sources. We want to make sure you can get the tools you need, so we've integrated them all into Pamac, our graphical package manager.
 
-Want Google Chrome or something else? You have options:
+Here's where your software comes from:
 
-- **AUR (Arch User Repository)** — a huge collection of community-maintained software.
-- You can enable AUR support directly in Pamac:
-  1. Open Pamac.
-  2. Go to **Preferences** (you may need your password).
-  3. Enable **AUR**.
-  4. Search for your app (e.g., “google-chrome”) and click install.
+*   **AcreetionOS Repositories:** These are our official repositories. We pull packages from Arch Linux and test them to ensure they're stable before we release them to you. This is your primary, safest source of software.
+*   **The ACUR (AcreetionOS Community User Repository):** Similar to the AUR, the ACUR is a place for community-contributed packages made specifically for AcreetionOS.
+*   **The AUR (Arch User Repository):** You have access to the vast collection of community-maintained packages for Arch Linux. It's a fantastic resource, but be aware that these packages are built from source on your machine and are maintained by the community, so use your judgment.
+*   **Flatpak:** We also include support for Flatpak out of the box. This allows you to install sandboxed applications that work across different Linux distributions.
 
----
+You can manage all of these sources through Pamac. To enable or disable support for AUR, ACUR, or Flatpak, just open Pamac, go to the preferences, and you'll find the toggles in the "Third Party" tab.
 
-## 5. We’re Always Improving
-
-We work on AcreetionOS **almost every day**.  
-If you ever get stuck or have questions:
-- We’re happy to help — even if we can’t reply instantly, we usually have Discord open.
+For those who prefer the command line, you can still use `pacman` for managing packages from the official AcreetionOS repositories.
 
 ---
 
-## 6. Need Help or Have Questions?
+## 4. Getting Help
 
-Join our friendly **AcreetionOS Community on Discord**:  
-🔗 [https://discord.gg/AJ6uuvtDXY](https://discord.gg/AJ6uuvtDXY)
+If you encounter any issues during or after installation, you can find help in the following places:
 
----
+*   **AcreetionOS Discord:** (https://discord.acreetionos.org)
+*   **AcreetionOS Wiki:** You are here.
 
-## 7. If You’re the “I Read the Manual” Type
-
-Some people like to dive into **documentation** instead of asking questions.  
-If that’s you, check out:  
-📚 [AcreetionOS Wiki – Problems & Fixes](https://wiki.acreetionos.org/en/latest/problems/)  
-
-Just know… the wiki is written in the **classic old-school Linux style**, which is great if you like scrolling through text walls.  
-Most newer users these days just:
-- Ask on Discord.
-- Or use AI to get an answer in 10 seconds.  
-
-But hey, if you’re a “manual and coffee” person — we love you too. ❤️
-
+We encourage you to search the wiki and forums for solutions before asking for help. When asking for help, please provide as much detail as possible, including any error messages and logs. We will guide you through how to get the information, and we may ask for the build number, and provide instructions on how to get it! We will walk you through everything, if needbe.

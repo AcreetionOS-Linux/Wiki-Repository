@@ -1,38 +1,43 @@
-# AcreetionOS Cinnamon: Our Flagship Edition
+# AcreetionOS
 
-Welcome to **AcreetionOS Cinnamon** — the heart and soul of our distribution, where innovation meets simplicity. This is *the* edition that sets the gold standard, and the awesome features you love here slowly trickle down to the other flavors.
+Welcome to AcreetionOS! We're a community-driven project that aims to provide a stable, reliable, and user-friendly operating system based on Arch Linux. We believe in empowering our users, not serving corporate interests. This means we provide a system that is easy to use, but also powerful and customizable.
 
-Maintained primarily by the talented **Darren Clift**, this edition gets the full attention it deserves to stay polished, stable, and ready for you.
-
-## Why Cinnamon? Because It Just Works
-
-Cinnamon offers a **traditional, sleek, and user-friendly desktop** that feels familiar yet modern. Whether you're a Linux newbie or a seasoned pro, its **customizable interface** lets you make your workspace truly yours — no headaches, just smooth sailing.
-
-## Looking Ahead: Considering libadapta
-
-We are currently **considering integrating libadapta**, the GTK theme developed by the Cinnamon team at Linux Mint. Their dedication to style and usability is inspiring, and libadapta could help make the Cinnamon variant even more visually cohesive and polished.
-
-## Your Software, Your Way
-
-Say hello to **Pamac**, your friendly neighborhood app store. Installing and updating software is as easy as clicking a button — no command lines needed.
-
-We include **Firefox** as the default browser because it’s:
-
-- The **best maintained**
-- The **least invasive** of the major browsers
-- Packed with **cutting-edge features**, including **AI support** to supercharge your browsing
-
-Plus, with full **Flatpak** and **Arch User Repository (AUR)** support, the world of software is at your fingertips.
-
-## Lightweight & Ready to Roll
-
-You don’t need a beast of a machine to enjoy AcreetionOS Cinnamon. It runs smoothly on as little as **1.3 GB of RAM**! Here’s what you need to get started:
-
-- At least **2 CPU cores**
-- **1.3 GB RAM**
-- **30 GB HDD/SSD storage**
-
-Perfect for everyday use on a wide range of hardware — from laptops to desktops.
 ---
 
-Ready to experience computing that just works? AcreetionOS Cinnamon is waiting for you.
+## The AcreetionOS Desktop
+
+AcreetionOS features the Cinnamon desktop environment, and it is the only officially supported version. We chose Cinnamon because it provides a classic, intuitive desktop experience that is both familiar and highly customizable. It's stable, mature, and actively developed. We believe it offers the best experience for most users.
+
+We're always working to improve the desktop experience and are committed to providing a polished and consistent user interface.
+
+---
+
+## Pre-installed Software
+
+AcreetionOS comes with a minimal set of pre-installed applications to get you started:
+
+*   **Firefox:** The default web browser.
+*   **Pamac:** A graphical package manager for installing and updating software.
+*   **Nemo:** The default file manager.
+
+You can easily install additional software from the official AcreetionOS repositories, ACUR (AcreetionOS AUR) or the Arch User Repository (AUR). We also offer limited Flatpak support. We will do our best to help you.
+
+---
+
+## System Requirements
+
+To run AcreetionOS, we recommend the following minimum system specifications:
+
+*   **CPU:** 2 cores
+*   **RAM:** 2 GB
+*   **Storage:** 30 GB of free space
+
+While the system may run on less, these recommendations will ensure a smooth and responsive user experience.
+
+---
+
+## The Future: ARM and Beyond
+
+We are currently working on an ARM version of AcreetionOS. This is a long-term project, and it is not yet ready for release. We will provide more information as development progresses.
+
+Our focus is, and always will be, on providing a great experience for our users. We're a small team of developers who are passionate about Linux and open source. We're here to help, and we welcome you to our community.

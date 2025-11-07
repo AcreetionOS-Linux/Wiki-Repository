@@ -1,44 +1,44 @@
-# AcreetionOS Packages & Release Model
+# AcreetionOS Release Model
 
-AcreetionOS builds on the incredible foundation provided by [Arch Linux](https://archlinux.org). We give full credit to Arch for their upstream work — our goal isn’t to reinvent the wheel, but to refine it and add our own touches of perfection to what they have already established.
-
-We are **not** avoiding or distancing ourselves from the Arch Linux team.  
-Our goals simply differ:
-- Arch is focused on providing a **pure, rolling-release distribution** in its raw form.
-- AcreetionOS aims to provide an **accessible, inclusive, and highly curated version** of Arch with sane defaults, extra polish, and a community-driven approach.
-
-In other words: we **stand on their shoulders**, not apart from them.
+AcreetionOS is a rolling-release distribution based on Arch Linux. We leverage the power and flexibility of Arch while providing a curated and stable experience for our users. This document outlines our release model and package management strategy.
 
 ---
 
-## 📦 Package Repositories
+## Relationship with Arch Linux
 
-We maintain our **own repositories** in addition to using Arch’s upstream repos.  
-- **Personal Repository:** Contains AcreetionOS-specific packages, customizations, and utilities. It is already listed in your `pacman.conf` when you install AcreetionOS.  
-- **Upstream Arch Repos:** Pulled directly from Arch for all standard packages, with our own fixes or improvements applied when needed.
-
-We **host our repositories ourselves** wherever possible. This means:
-- Full control over our packages.
-- Updates that are intentional, tested, and not rushed.
-- Sometimes slower propagation than large corporate distros — but this is by design.
+AcreetionOS is not a fork of Arch Linux, but rather a distribution that builds upon it. We use the Arch Linux package repositories as our upstream source and add our own layer of customization and testing. Our goal is to make Arch Linux more accessible to a wider audience by providing a user-friendly installer, sane defaults, and a stable release cycle.
 
 ---
 
-## 🔄 Update Model
+## Package Repositories
 
-- **Stable Branch:** Updated **once a month** with curated, tested packages.
-- **Testing Branch:** Synced **nightly** from Arch upstream and our own development work. We use this to test packages, catch breakages, and make improvements before they reach stable.
+AcreetionOS uses a combination of our own package repositories and the official Arch Linux repositories.
 
-We monitor:
-- The [Arch Linux mailing lists](https://lists.archlinux.org)
-- Arch’s forums
-- Community reports
+*   **AcreetionOS Repository:** This repository contains all AcreetionOS-specific packages, including our branding, themes, and system configuration tools. It is enabled by default in `/etc/pacman.conf`.
+*   **Arch Linux Repositories:** We pull packages from the official Arch Linux repositories. These packages are then moderated and tested by our team to ensure stability before being released to our users. This ensures that our users have access to a large and up-to-date software collection, with an added layer of quality control.
+*   **ACUR (AcreetionOS Community User Repository):** Similar to the AUR, the ACUR is a place for community-contributed packages made specifically for AcreetionOS. These packages generally come from the Chaotic AUR. Those of which do not, come directly from the AcreetionOS Team.
+*   **AUR:** You have access to the vast collection of community-maintained packages for Arch Linux.
+*   **Flatpak:** We also include support for Flatpak out of the box. This allows you to install sandboxed applications that work across different Linux distributions.
+*   **Snapd:** We do not officially support Snapd, although, you can install it from the AUR. We will do our best to support you with it, but we can not make any promises on full functionality.
 
-…to catch major upstream issues before they impact AcreetionOS users.
+We host our own repository to ensure that we have full control over the packages we ship and to provide a stable and tested experience for our users. If you are interested in hosting a package mirror, please contact us at `developers.acreetionos.org` via email. Requests will be evaluated based on end-user interest and our current needs.
 
 ---
 
-## 🎨 Package Flow (Word Art)
+## Update Cycle
+
+We offer two main branches for our users:
+
+*   **Stable Branch:** This is the default branch for all AcreetionOS users. It is updated on a regular basis, typically every two weeks, with packages that have been thoroughly tested by our team and the community. This approach provides a balance between having up-to-date software and a stable system. In addition to regular updates, hotfixes are released promptly for any significant breakages.
+*   **Testing Branch:** This branch is for users who want to get the latest packages as soon as they are available. It is synced nightly from the Arch Linux upstream repositories and our own development branches. This branch is intended for developers and experienced users who are willing to deal with potential instability.
+
+We actively monitor the Arch Linux mailing lists and forums to stay informed about any upstream issues that may affect our users.
+
+---
+
+## Package Flow
+
+The following diagram illustrates our package flow from the Arch Linux upstream to our stable users:
 
 ```
    ┌────────────────────────────┐
@@ -66,38 +66,12 @@ We monitor:
 
 ---
 
-## 🧑‍💻 Our Reality
+## ISO Release Policy
 
-AcreetionOS is **small, community-driven, and built by people who care deeply about quality**. Many of us, including the lead maintainer, are on disability.  
-This means:
-- We work around health limitations — but we do not use them as an excuse.
-- We prioritize stability, safety, and usefulness over arbitrary deadlines.
-- Releases come out **on time for quality**, not on a fixed calendar.
+New ISO images are released on an as-needed basis. We do not follow a fixed release schedule for our ISOs. A new ISO may be released for any of the following reasons:
 
----
+*   Significant changes to the base system.
+*   Major updates to the installer.
+*   Important security fixes that require a new installation medium.
 
-## 💿 ISO Release Policy
-
-ISO images are released **when they are needed**, not on a rigid schedule.  
-Reasons for a new ISO might include:
-- Significant system changes
-- Major security updates
-- Installer improvements
-
-We avoid overcomplicating releases or producing unnecessary ISOs.
-
----
-
-## 📝 Summary
-
-- **Stable branch:** Monthly updates.  
-- **Testing branch:** Nightly syncs.  
-- **Personal repo:** AcreetionOS packages, pre-configured in `pacman.conf`.  
-- **Arch upstream:** We add polish to their excellent foundation while pursuing different goals.  
-- **Monitoring:** Mailing lists + forums to catch issues.  
-- **Reality:** Small team, self-hosted repos, health limitations — but always delivering.  
-- **ISO releases:** As needed, not overproduced.  
-
----
-
-> *Made with ❤️ by the AcreetionOS team.*
+Our goal is to provide up-to-date ISO images without creating unnecessary work for our developers or confusion for our users.

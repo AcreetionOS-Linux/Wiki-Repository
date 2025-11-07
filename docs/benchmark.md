@@ -1,227 +1,103 @@
-\# Comprehensive Gaming Benchmark & Setup Guide for Arch-Based Systems (Pamac GUI)
+# Gaming Benchmarking on AcreetionOS
 
-This guide will walk you through:
+Accurate benchmarking is crucial for evaluating system performance and optimizing your gaming experience. This guide provides a comprehensive overview of setting up your AcreetionOS system for gaming benchmarks, including driver installation, tool setup, and recommended methodologies.
 
-\- Enabling AUR support in Pamac
+---
 
-\- Installing all necessary benchmarking & gaming tools (including GPU drivers)
+## 1. Prerequisites
 
-\- Setting up for AMD, NVIDIA, and Intel Arc GPUs
+### Enable AUR Support
 
-\- How to run benchmarks and interpret results
+Many essential gaming and benchmarking tools are available in the Arch User Repository (AUR). Ensure AUR support is enabled in Pamac or configure your AUR helper (e.g., `yay`).
 
-\- Recommended gaming benchmark methodologies
+*   **Pamac (GUI):**
+    1.  Open Pamac (Add/Remove Software).
+    2.  Navigate to `☰ Menu > Preferences > Third Party`.
+    3.  Enable "AUR support" and optionally "Check for updates from AUR".
 
-\---
+*   **Command Line (using `yay`):**
 
-\## 1. Enable AUR Support in Pamac
+    ```bash
+    # yay is an AUR helper. If you don't have it, install it first:
+    # sudo pacman -S --needed git base-devel
+    # git clone https://aur.archlinux.org/yay.git
+    # cd yay
+    # makepkg -si
+    yay -Syu
+    ```
 
-1\. Open \*\*Pamac\*\* (also called "Add/Remove Software" in your applications menu).
+---
 
-2\. Click the \*\*☰\*\* menu in the top right corner.
+## 2. Graphics Driver Installation
 
-3\. Select \*\*Preferences\*\* (enter your password if asked).
+Properly configured graphics drivers are fundamental for gaming performance. Refer to the [Common Problems and Solutions](problems.md#graphics-issues) page for detailed instructions on installing drivers for AMD, NVIDIA, and Intel GPUs.
 
-4\. Go to the \*\*Third Party\*\* tab.
+---
 
-5\. Enable \*\*AUR support\*\* and optionally check \*\*Enable AUR updates\*\*.
+## 3. Benchmarking and Performance Monitoring Tools
 
-6\. Close Preferences.
+Install the following tools to conduct and monitor your benchmarks.
 
-\---
+### Benchmarking Tools
 
-\## 2. Install GPU Drivers
+*   **Vulkan Tools:** Provides `vulkaninfo` for verifying Vulkan support and `vkcube` for basic Vulkan rendering.
+    *   **Pamac (GUI):** Search for `vulkan-tools`.
+    *   **pacman (CLI):** `sudo pacman -S vulkan-tools`
 
-\### AMD
+*   **GLMark2:** An OpenGL 2.0 benchmark.
+    *   **Pamac (GUI):** Search for `glmark2`.
+    *   **pacman (CLI):** `sudo pacman -S glmark2`
 
-1\. Search for and install:
+*   **Unigine Heaven/Superposition:** Popular GPU stress tests and benchmarks.
+    *   **Pamac (GUI):** Search for `unigine-heaven` (AUR) and `unigine-superposition` (AUR).
+    *   **yay (CLI):** `yay -S unigine-heaven unigine-superposition`
 
-\- \`mesa\`
+### Performance Monitoring Tools
 
-\- \`mesa-utils\`
+*   **MangoHud:** An in-game overlay for displaying FPS, frame times, GPU/CPU usage, temperatures, and more.
+    *   **Pamac (GUI):** Search for `mangohud` (AUR).
+    *   **yay (CLI):** `yay -S mangohud`
 
-\- \`vulkan-radeon\`
+*   **GOverlay:** A graphical user interface for configuring MangoHud.
+    *   **Pamac (GUI):** Search for `goverlay` (AUR).
+    *   **yay (CLI):** `yay -S goverlay`
 
-\- \`lib32-vulkan-radeon\`
+*   **GPU-Specific Monitoring:**
+    *   **AMD:** `radeontop` (AUR) for real-time GPU usage.
+        *   **yay (CLI):** `yay -S radeontop`
+    *   **NVIDIA:** `nvidia-smi` (included with `nvidia-utils`) for GPU information and usage.
+    *   **Intel Arc:** `intel-gpu-tools` for GPU usage monitoring.
+        *   **pacman (CLI):** `sudo pacman -S intel-gpu-tools`
 
-2\. For performance monitoring:
+---
 
-\- \`radeontop\` (AUR) — shows GPU usage in real-time.
+## 4. Benchmarking Methodology
 
-\### NVIDIA
+To ensure consistent and comparable benchmark results, follow these guidelines:
 
-1\. Search for and install:
+1.  **System Warm-up:** Run a demanding application or game for 5-10 minutes before benchmarking to allow components to reach operating temperatures.
+2.  **Consistent Settings:** Use identical resolution, graphics presets, and API (Vulkan/OpenGL) across all benchmark runs.
+3.  **Multiple Passes:** Execute each benchmark at least three times and average the results to minimize variance.
+4.  **Monitor System Load:** Utilize MangoHud or GPU-specific tools to confirm that the CPU and GPU are consistently utilized during the benchmark.
+5.  **Record Key Metrics:** Document average, minimum, and maximum FPS, 1% and 0.1% low FPS values, GPU temperature, and GPU utilization.
+6.  **Synthetic vs. Real-World:** Combine synthetic benchmarks (e.g., Unigine) with in-game performance monitoring (MangoHud) for a comprehensive assessment.
 
-\- \`nvidia\`
+---
 
-\- \`nvidia-utils\`
+## 5. GPU-Specific Optimizations
 
-\- \`lib32-nvidia-utils\`
+### AMD
 
-\- \`vulkan-icd-loader\`
+*   Keep your Mesa drivers updated, as new versions often bring significant performance improvements.
+*   Consider using `RADV_PERFTEST=aco` in game launch options for potential performance gains with the ACO compiler.
 
-\- \`lib32-vulkan-icd-loader\`
+### NVIDIA
 
-2\. For performance monitoring:
+*   Always use the proprietary NVIDIA drivers for optimal performance.
+*   In the NVIDIA X Server Settings, set the "PowerMizer" mode to "Prefer Maximum Performance" for benchmarking.
 
-\- \`nvidia-smi\` (included with \`nvidia-utils\`).
+### Intel Arc
 
-\### Intel Arc
-
-1\. Search for and install:
-
-\- \`mesa\`
-
-\- \`mesa-utils\`
-
-\- \`vulkan-intel\`
-
-\- \`lib32-vulkan-intel\`
-
-\- \`intel-gpu-tools\` (for GPU usage monitoring)
-
-2\. Make sure your kernel is up to date for the latest Arc support.
-
-\---
-
-\## 3. Install Benchmarking & Gaming Tools
-
-Search for and install the following \*\*using Pamac GUI\*\*:
-
-\### Benchmarking Tools
-
-\- \`vulkan-tools\` — Vulkan info and benchmarking.
-
-\- \`glmark2\` — OpenGL benchmark.
-
-\- \`unigine-heaven\` (AUR) — GPU stress test.
-
-\- \`unigine-superposition\` (AUR) — modern GPU stress test.
-
-\- \`gpu-burn\` (AUR) — GPU stress/thermal testing.
-
-\- \`mangohud\` (AUR) — in-game performance overlay.
-
-\- \`goverlay\` (AUR) — GUI for MangoHud settings.
-
-\### Gaming Tools
-
-\- \`bottles\` (AUR) — manage Wine environments.
-
-\- \`protonup-qt\` (AUR) — install custom Proton-GE builds.
-
-\- \`lutris\` — manage games from multiple platforms.
-
-\- \`steam\` — Steam client.
-
-\- \`heroic-games-launcher-bin\` (AUR) — Epic & GOG games launcher.
-
-\---
-
-\## 4. How to Use the Tools
-
-\### MangoHud
-
-\- Launch games with \`mangohud\` to display FPS, frame time, GPU usage, temperature, etc.
-
-\- Example (terminal):
-
-\`\`\`bash
-
-mangohud glxgears
-
-In Steam:
-
-Right-click a game → Properties → In Launch Options, type:
-
-mangohud %command%
-
-GOverlay
-
-Open GOverlay from your applications menu.
-
-Customize MangoHud's appearance, metrics, and position.
-
-Vulkan-Tools
-
-Run:
-
-vulkaninfo
-
-to verify Vulkan support and see GPU capabilities.
-
-GLMark2
-
-Run:
-
-glmark2
-
-for a quick OpenGL performance score.
-
-Unigine Heaven / Superposition
-
-Open from your applications menu after install.
-
-Select resolution and settings.
-
-Run benchmark → record score.
-
-GPU Usage Monitoring
-
-AMD: radeontop
-
-NVIDIA: nvidia-smi
-
-Intel Arc: intel\_gpu\_top
-
-5\. Recommended Benchmark Methodology
-
-Warm up your GPU — Run a quick game or stress test for 5 minutes before benchmarking to normalize temps.
-
-Use consistent settings — Always benchmark with the same resolution, graphics preset, and API (e.g., Vulkan or OpenGL).
-
-Run multiple passes — Run each benchmark 3 times, average the results.
-
-Monitor system load — Use MangoHud to ensure CPU/GPU usage is maxed consistently.
-
-Record data — Note down:
-
-FPS average, min, and max
-
-1% and 0.1% low FPS values
-
-GPU temperature
-
-GPU utilization
-
-Test both synthetic and real-world scenarios — Use Unigine for stress, MangoHud in actual games for real usage numbers.
-
-Compare across APIs — If a game supports Vulkan and OpenGL, test both.
-
-6\. Quick GPU-Specific Notes
-
-AMD
-
-Mesa updates can significantly improve performance; keep your system updated.
-
-Use RADV\_PERFTEST=aco in launch options for some performance boosts.
-
-NVIDIA
-
-Use proprietary drivers (nvidia, not nouveau) for best performance.
-
-Enable Prefer Maximum Performance in NVIDIA Settings for benchmarking.
-
-Intel Arc
-
-Requires latest kernel + Mesa for best results.
-
-Arc performs best in Vulkan; use it whenever possible.
-
-Keep intel-media-driver updated for video acceleration.
-
-✅ With these steps, you now have everything needed for accurate Linux gaming benchmarks and can manage your gaming library across multiple platforms with maximum performance.
-
-This is now \*\*everything\*\* — one big copy/paste box, covers AMD, NVIDIA, and Intel Arc, gives installation + usage + methodology, all GUI-only via Pamac for installing.
-
-If you want, I can also prepare a \*\*matching illustrated version\*\* with Pamac screenshots for a polished PDF guide.
+*   Ensure your kernel and Mesa drivers are up-to-date for the best Arc support.
+*   Prioritize Vulkan API usage whenever possible, as Arc GPUs generally perform best with Vulkan.
+*   Keep `intel-media-driver` updated for hardware video acceleration.

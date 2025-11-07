@@ -1,55 +1,42 @@
-# AcreetionOS: Technology That Works for You
+# AcreetionOS: Your System, Your Rules.
 
-**AcreetionOS** is designed for people who want their computer to just work—no tech jargon, no confusing setup, no endless updates—just a fast, clean, and reliable experience. Whether you're working, creating, or simply browsing the web, AcreetionOS is built to get out of your way and let you focus on what matters.
+Welcome to AcreetionOS. We're a community of developers and users who believe that your operating system should serve you, not the other way around. We started this project because we were tired of the bloat, the telemetry, and the corporate agendas that drive mainstream OS development. Our philosophy is simple: build a fast, clean, and reliable system that puts you in control.
 
-We don’t follow trends made by big tech corporations—we listen to real people. Our goal is simple: build a powerful system that feels intuitive, respects your privacy, and adapts to your needs.
-
----
-
-## Easy to Start, Easy to Use
-
-If you've ever felt overwhelmed setting up a computer, AcreetionOS is here to change that. Our setup is fast, friendly, and designed for everyone—even if you've never installed an operating system before. No confusing choices. No technical hurdles. Just a smooth, modern desktop that's ready to go.
-
-AcreetionOS gives you:
-
-- A clean interface that feels familiar and easy to navigate  
-- Built-in apps for everyday use: web browsing, documents, photos, and more  
-- A simple app store where you can install what you want—no special knowledge required  
+This wiki is the heart of our documentation. It's written by us—the developers—and by community members like you. It's here to help you get the most out of AcreetionOS, whether you're a seasoned Linux user or just starting your journey.
 
 ---
 
-## A System That Keeps Getting Smarter
+## What is AcreetionOS?
 
-We believe your computer should work *with* you, not against you. That’s why we’re integrating the latest in smart authentication features:
+AcreetionOS is a Linux distribution built on a stable Arch Linux base. We take the power and flexibility of Arch and pair it with a curated, user-friendly experience. Our goal is to provide a system that is:
 
-- **Fingerprint sensor support** – unlock your system just like your phone  
-- **FaceID-style login** – log in by simply looking at the screen  
-- **Future support for secure identity features** – we’re exploring technologies like **Gemeni over IPA**, a modern way to manage identity across apps, while respecting your privacy
-
-AcreetionOS is progressive not just in technology, but in philosophy. We build with inclusion, transparency, and long-term freedom in mind—not corporate control.
-
----
-
-## Built to Be Stable, Not Rushed
-
-While some systems constantly push updates that break things, AcreetionOS takes a different path. We update **once a month**—carefully and predictably—so your system stays stable and smooth. You’re never forced to upgrade in the middle of your day, and you’re never left with something that no longer works.
+*   **Fast and Lightweight:** We ship a minimal set of packages by default. No bloatware, no unnecessary services running in the background.
+*   **Stable and Reliable:** We're based on a snapshot of the Arch Linux repositories, which we test and stabilize before releasing updates. This means you get a rolling-release model without the constant risk of breakage. We release updates once a month, on a predictable schedule.
+*   **User-Focused:** We believe in sane defaults and a system that works out of the box. We also believe in choice. That's why we offer different desktop environments, so you can pick the one that best suits your workflow.
+*   **Private and Secure:** We don't collect your data. We don't track your usage. We believe that your computer is your own. We're also working on integrating modern authentication methods like fingerprint and facial recognition, implemented in a way that respects your privacy.
 
 ---
 
-## Flavors That Fit Your Style
+## For the Community, By the Community
 
-We understand that not everyone uses their computer the same way, so we give you choices:
+AcreetionOS is a labor of love. We're not a corporation; we're a team of volunteers who are passionate about building a better operating system. We do not accept monetary donations. Instead, we establish resources with other organizations, such as universities, to offer services for our end-users. We also self-host what we can, like our repositories, for cost reasons. This means our only incentive is to build the best system we can for you.
 
-- **Cinnamon Edition** – modern but familiar, great for switching from Windows  
-- **GNOME Edition** – sleek and focused, great for getting things done  
-- **XFCE Edition [StormOS]** – ultra-lightweight, for older computers or performance fans, and those wanting an experimental experience.  
-
-No matter the edition, AcreetionOS stays fast, stable, and easy to use.
+We believe in transparency and open collaboration. Our development process is open, and we encourage our users to get involved. Whether it's by reporting bugs, contributing to this wiki, or packaging new software, there are many ways to help shape the future of AcreetionOS.
 
 ---
 
-## More Than an Operating System—A Movement
+## Desktop Environments
 
-AcreetionOS isn’t just software—it’s a community of people building something better together. We aren’t chasing trends or trying to sell your data. We’re building a system for creators, learners, dreamers, and everyday users who want their technology to respect them.
+We currently focus our development efforts on the Cinnamon edition of AcreetionOS:
 
-Whether you’re new to computing or just tired of how complicated it’s become, AcreetionOS is your chance to reset and experience what modern computing *should* feel like.
+*   **Cinnamon Edition:** A modern, feature-rich desktop environment that provides a familiar and comfortable user experience.
+
+We also have an experimental **XFCE Edition (StormOS)** for those who want a lightweight, no-frills experience, or for those with older hardware. An ARM version is under development, but it is not ready and is a distant prospect.
+
+---
+
+## Getting Started
+
+Ready to give AcreetionOS a try? Head over to our [installation guide](installation.md) to get started. If you run into any trouble, check out the [problems](problems.md) page or ask for help on our forums.
+
+We're glad to have you with us. Welcome to the AcreetionOS community.

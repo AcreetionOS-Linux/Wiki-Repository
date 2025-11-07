@@ -1,389 +1,115 @@
-# AcreetionOS Contribution Templates
+# Common Problems and Solutions
 
-Welcome to the AcreetionOS contribution templates!  
-We’re a community-first, Arch-based Linux distribution that values **inclusivity, flexibility, and respect for everyone’s time**.  
-Our philosophy is simple:
-- **High standards, zero burnout.**
-- **Any workflow is welcome** — whatever works best for you.
-- **Neurodivergent-friendly** — no “one size fits all” corporate model here.
-- **Community before bureaucracy** — people matter more than process.
+This page lists some common problems that you may encounter while using AcreetionOS, along with their solutions.
 
 ---
 
-## 🔒 Privacy Reminder: Using Redirect Services
+## Installation Issues
 
-When you include **links or email addresses** in any template:
-- Please use a **privacy-friendly redirect service** like:
-  - [https://t.ly](https://t.ly)
-  - [https://tinyurl.com](https://tinyurl.com)
-  - [https://anon.to](https://anon.to) (for anonymized redirects)
-- This helps **protect your personal IP address and metadata** when people click your links.
-- It also ensures old links can be updated in the future without editing old posts.
+### The installer fails with an error message
 
-**Example — Instead of:**
-```
-https://github.com/username/myrepo
-```
-**Use:**
-```
-https://t.ly/example
-```
+If the Calamares installer fails, please try the following:
 
-For emails, use a disposable/alias email:
-**Example — Instead of:**
-```
-myrealemail@gmail.com
-```
-**Use:**
-```
-contact-me@example.alias.simplelogin.com
-```
+1.  Ensure that you have a stable internet connection.
+2.  Verify the integrity of the ISO image you downloaded.
+3.  Try a different USB drive and USB port.
+4.  If you are partitioning your drive manually, ensure that you have created an EFI System Partition (ESP) of at least 300MB and mounted it at `/boot/efi`.
 
----
+If the problem persists, please file a bug report and provide the installer log, which can be found at `~/.cache/calamares/session.log` in the live environment.
 
-## 🐞 Bug Report
+### The system does not boot after installation
 
-```
-**Summary of the bug**
-Briefly describe the problem.
+If the system does not boot after installation, it is likely an issue with the bootloader. Please try the following:
 
-**Steps to reproduce**
-1. ...
-2. ...
-3. ...
+1.  Boot into the AcreetionOS live environment.
+2.  Open a terminal and mount your system's root partition.
+3.  Chroot into your installed system.
+4.  Reinstall the GRUB bootloader:
 
-**Expected behavior**
-What should have happened?
+    ```bash
+    grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=AcreetionOS
+    grub-mkconfig -o /boot/grub/grub.cfg
+    ```
 
-**Actual behavior**
-What happened instead?
-
-**Logs / Screenshots**
-Paste logs (if short) or attach files. Screenshots help too.
-
-**Environment**
-- AcreetionOS version: 
-- Kernel: 
-- Desktop environment: 
-- Hardware model: 
-
-**Additional context**
-Any other info that could help.  
-(If linking a log file, please use a redirect service: e.g., https://t.ly/buglog123)
-```
+5.  Reboot your system.
 
 ---
 
-## 💡 Feature Request
+## Graphics Issues
 
+### Incorrect screen resolution or graphical artifacts
+
+If you are experiencing graphics issues, it is likely that you need to install the correct graphics drivers for your hardware.
+
+#### NVIDIA Drivers
+
+To install the proprietary NVIDIA drivers, run the following command:
+
+```bash
+sudo pacman -S nvidia
 ```
-**Feature title**
-Short, descriptive title.
 
-**Description**
-Explain the new feature or improvement.
+Then, reboot your system.
 
-**Benefits**
-Why this would help users/devs.
+#### AMD Drivers
 
-**Proposed implementation**
-How you think it could work (technical or design).
-
-**Alternatives**
-Other approaches considered.
-
-**Additional context**
-Links, images, or references (please use redirect services: e.g., https://t.ly/feature-img)
-```
+The open-source AMD drivers (`mesa`) are installed by default and should work for most AMD GPUs. If you are experiencing issues, you can try installing the proprietary `amdgpu-pro` drivers, but this is generally not recommended.
 
 ---
 
-## 📚 Documentation Improvement
+## Audio Issues
 
-```
-**Affected page/section**
-Link or describe where the doc is (use redirect service: e.g., https://t.ly/doc123)
+### No sound or incorrect audio output device
 
-**Current issue**
-What's wrong, unclear, or outdated?
+If you are having audio issues, please try the following:
 
-**Proposed change**
-What should be added or fixed.
+1.  Ensure that your audio device is not muted. You can use `alsamixer` in the terminal to check the volume levels.
+2.  Install `pavucontrol` (PulseAudio Volume Control) for more granular control over your audio devices.
 
-**Additional notes**
-Any references, screenshots, or related info (redirect service link: https://t.ly/refnotes)
-```
+    ```bash
+    sudo pacman -S pavucontrol
+    ```
 
----
+3.  If you are still having issues, you may need to install the `sof-firmware` package for newer hardware.
 
-## 🌍 Translation Request / Contribution
-
-```
-**Language**
-Language to add or improve.
-
-**Current translation status**
-New / needs update / inaccurate.
-
-**Translation content**
-Paste translation suggestions or attach a file.
-
-**Additional notes**
-Links to translation resources (redirect service: https://t.ly/trans-help)
-```
+    ```bash
+    sudo pacman -S sof-firmware
+    ```
 
 ---
 
-## ♿ Accessibility Feedback
+## Networking Issues
 
+### Wi-Fi not working
+
+If your Wi-Fi is not working, you may need to install the correct drivers for your wireless card. First, identify your wireless card:
+
+```bash
+lspci -k
 ```
-**Area**
-Which part of AcreetionOS (UI, docs, installer, etc.)
 
-**Issue**
-Describe the accessibility problem.
-
-**Impact**
-How it affects usability for specific needs.
-
-**Suggested fix**
-If you have one.
-
-**Additional context**
-Screenshots, logs, or examples (redirect service: https://t.ly/access-example)
-```
+Then, search for the appropriate driver package in the Arch Linux documentation or the AUR. For example, many Broadcom wireless cards require the `broadcom-wl` package from the AUR.
 
 ---
 
-## 🔒 Security Vulnerability Report
+## Package Management Issues
 
-```
-**Summary**
-Brief description of the vulnerability.
+### Errors while updating the system
 
-**Affected components**
-Which package/module.
+If you encounter errors while updating your system with `sudo pacman -Syu`, it may be due to an issue with the package database or a corrupted package. Please try the following:
 
-**Steps to reproduce**
-Detailed reproduction steps.
+1.  Refresh the package database:
 
-**Potential impact**
-What could happen if exploited.
+    ```bash
+    sudo pacman -Syy
+    ```
 
-**Suggested mitigation**
-Any proposed fixes.
+2.  Clear the package cache:
 
-**Confidentiality**
-Security issues should be reported privately first — use an alias email (e.g., security-report@alias.simplelogin.com).
-```
+    ```bash
+    sudo pacman -Scc
+    ```
 
----
+3.  Try updating the system again.
 
-## 🛠 Pull Request (Code Contribution)
-
-```
-**Description**
-Briefly explain the changes.
-
-**Changes made**
-- ...
-- ...
-- ...
-
-**Testing performed**
-How you tested the changes.
-
-**Screenshots**
-If applicable (redirect service: https://t.ly/pr-screen)
-
-**Related issues**
-Link issue numbers (redirect service: https://t.ly/related-issue)
-
-**Reviewer notes**
-Anything specific for reviewers to check.
-```
-
----
-
-## 📦 Package Request
-
-```
-**Package name**
-Exact software name.
-
-**Reason**
-Why it’s useful for AcreetionOS.
-
-**Source**
-Link to source code or official repo (redirect service: https://t.ly/pkg-source)
-
-**Build requirements**
-Any special dependencies.
-
-**Additional info**
-Anything else relevant.
-```
-
----
-
-## ⚡ Performance Issue
-
-```
-**Summary**
-Describe the performance problem.
-
-**Steps to reproduce**
-1. ...
-2. ...
-
-**Expected performance**
-What speed/efficiency you expect.
-
-**Actual performance**
-What’s happening now.
-
-**System info**
-- CPU:
-- GPU:
-- RAM:
-- Storage type:
-
-**Logs or benchmarks**
-Paste or attach (redirect service: https://t.ly/benchmarks)
-
-**Additional context**
-Any other clues.
-```
-
----
-
-## 🖥 Hardware Compatibility Report
-
-```
-**Hardware model**
-Exact model name/number.
-
-**Components tested**
-CPU, GPU, Wi-Fi, etc.
-
-**Results**
-Working / partially working / not working.
-
-**Issues found**
-Any bugs or quirks.
-
-**Kernel & driver info**
-...
-
-**Additional notes**
-Tips or workarounds (redirect service: https://t.ly/hw-tips)
-```
-
----
-
-## ⚙ Configuration Share
-
-```
-**Purpose**
-What the config is for (e.g., theme, performance tweak).
-
-**Configuration file**
-Paste inside code block or attach.
-
-**Notes**
-Dependencies, version info, or usage tips (redirect service: https://t.ly/config-notes)
-```
-
----
-
-## 🤝 Community / Conduct Concern
-
-```
-**Type of concern**
-Harassment / conduct / moderation / other.
-
-**Description**
-What happened (facts only, no personal attacks).
-
-**Impact**
-How it affects community health.
-
-**Action requested**
-What you’d like done.
-
-**Confidentiality**
-Whether you want this handled privately — if so, use an alias email (e.g., report@alias.simplelogin.com).
-```
-
----
-
-## 🧪 Testing Request / Feedback
-
-```
-**Component tested**
-Which app, package, or feature.
-
-**Testing steps**
-1. ...
-2. ...
-
-**Results**
-Pass / fail / partial success.
-
-**Bugs found**
-List them or link to bug reports (redirect service: https://t.ly/test-bug)
-
-**Additional notes**
-Screenshots, logs, or extra context.
-```
-
----
-
-## 📝 Patch Submission (Non-Code)
-
-```
-**Type of patch**
-Docs / artwork / config / other.
-
-**Summary**
-What the patch does.
-
-**Files changed**
-List or attach.
-
-**Testing**
-If applicable.
-
-**Additional context**
-Links or explanations (redirect service: https://t.ly/patch-notes)
-```
-
----
-
-### ✅ Submitting Your Template
-1. Copy the template that fits your situation.  
-2. Fill in the sections.  
-3. **If including links or emails**, please use redirect services for your privacy (see examples above).  
-4. Submit it through:
-   - GitHub/GitLab issue tracker  
-   - Pull/Merge Request  
-   - Community forums  
-   - Email (for private matters, like security)  
-
-We **don’t** require perfect formatting — the important part is **getting your thoughts and contributions in**.  
-We’ll help refine them if needed.
-
----
-
-### 💬 Need Help?
-If you have questions:
-- **Join our Discord** → [https://acreetionos.org](https://acreetionos.org) (link on the site)
-- We are happy to help — even if the answer isn’t instant.
-- Most of us keep Discord open, so usually responses are quick.
-- Don’t be afraid to ask — every question is welcome.
-
----
-
-<!--
-This contribution template page was generated with assistance from ChatGPT (GPT-5), adapted for AcreetionOS by the community.
--->
+If the problem persists, please check the [Our Wiki](https://wiki.acreetionos.org) or come to our [Discord](https://discord.acreetionos.org) and we will do our best to help you!

@@ -1,30 +1,25 @@
-# Welcome to AcreetionOS GNOME — Made for Mac Users
+# AcreetionOS: GNOME Edition (Discontinued)
 
-AcreetionOS GNOME is designed especially for people who love Mac computers. It feels familiar and easy to use.
-
-## What Makes It Special
-
-- **Touch Gestures Like Mac:**  
-  It uses a tool called **touchegg** to give you the same finger movements on your touchpad that you use on a Mac, so things feel natural.
-
-- **Fingerprint and Face Recognition:**  
-  The apps for logging in with your fingerprint or face are finished and will be ready in the next version. This helps keep your computer safe and quick to access.
-
-- **Gemeni Connection (Coming Soon):**  
-  We’re working on adding **Gemeni**, which will help your computer talk to other services more easily.
-
-- **Modern Look and Feel:**  
-  AcreetionOS GNOME uses new technology to give you a clean, fresh look that works perfectly with dark colors, which is easier on your eyes.
-
-- **All Your Favorite Apps:**  
-  It comes with the same set of useful programs as our other version called Cinnamon, so you have everything you need right away.
+The GNOME edition of AcreetionOS has been discontinued and is no longer maintained. This decision was made due to the GNOME desktop environment's transition to a Wayland-only display server, which we believe is not yet ready for all users.
 
 ---
 
-This project is managed by **Natalie Spiva**.
+## Why was it discontinued?
 
-I hope you enjoy using AcreetionOS GNOME as much as I enjoyed making it for you!
+The transition to Wayland by the GNOME project has been a significant undertaking. While we appreciate the effort to modernize the Linux desktop, we feel that Wayland is not yet mature enough to provide the stable and reliable experience that we want for our users.
+
+Furthermore, maintaining a fork of GNOME with Xorg support (Xlibre) would require a significant amount of development resources that we, as a small community-driven project, simply do not have.
+
+For these reasons, we have decided to retire the GNOME edition and focus our development efforts on the Cinnamon edition, as well as the upcoming ARM version of AcreetionOS.
 
 ---
 
-<small>Thank you for trying AcreetionOS GNOME. If you have any questions or need help, you can email me at **natalie@acreetionos.org**.</small>
+## What are the alternatives?
+
+We recommend that users who are looking for a modern and feature-rich desktop experience try the [AcreetionOS: Cinnamon Edition](AcreetionOS-Cinnamon.md). The Cinnamon desktop provides a more traditional workflow that is both familiar and highly customizable.
+
+All of our development work is now focused on the Cinnamon version, and we are confident that it will provide a great experience for our users.
+
+---
+
+We thank you for your understanding and support.

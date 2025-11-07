@@ -1,97 +1,113 @@
-# 🎮 Full Guide: Installing Gaming Tools on Arch-Based Systems with Pamac (GUI)
+# Gaming on AcreetionOS
 
-This guide is written for **beginners** and explains step-by-step how to install:
-
-- **Bottles** – Manage Windows software with Wine in isolated environments.
-- **ProtonUp-Qt** – Install and manage Proton-GE versions for Steam and Lutris.
-- **Lutris** – Game launcher for multiple platforms.
-- **Steam** – Popular gaming platform for Linux, Windows, and Mac.
-- **Heroic Games Launcher** – Epic Games, GOG, and Amazon Games launcher for Linux.
-
-We will **only** use the **Pamac GUI** (Add/Remove Software) — **no terminal commands required**.
+Linux has become a first-class platform for gaming, and AcreetionOS is an excellent choice for it. This guide will walk you through the process of setting up your system for gaming.
 
 ---
 
-## 🛠 1. Open Pamac (Add/Remove Software)
-1. Click your **application menu**.
-2. Search for **"Add/Remove Software"** or **"Pamac"**.
-3. Click it to open.
+## 1. Graphics Drivers
+
+The first and most important step is to ensure that you have the correct graphics drivers installed. For detailed instructions on how to install graphics drivers for NVIDIA and AMD GPUs, please refer to the [Common Problems and Solutions](problems.md#graphics-issues) page.
 
 ---
 
-## 🔓 2. Enable AUR (Arch User Repository) Support
+## 2. Steam
 
-Some of the programs we’re installing are only available in the **AUR**, so you need to turn this on.
+Steam is the largest digital distribution platform for PC gaming and is the primary way to play games on Linux. It includes a compatibility layer called Proton, which allows you to run many Windows-only games on Linux.
 
-1. In Pamac, click the **☰ menu** (three horizontal lines) in the top right corner.
-2. Select **Preferences**.  
-   *(You may be prompted to enter your administrator password — this is normal.)*
-3. In the Preferences window, click the **Third Party** tab.
-4. Under **AUR**, turn on:
-   - ✅ **Enable AUR support**  
-   - (Optional but recommended) ✅ **Check for updates from AUR**
-5. Close the Preferences window.
+### Installation
 
----
+*   **Using Pamac (GUI):**
+    1.  Open Pamac (Add/Remove Software).
+    2.  Search for `steam`.
+    3.  Click **Install**.
 
-## 🔍 3. Searching and Installing Applications
+*   **Using pacman (CLI):**
 
-We’ll install the applications **one by one** using Pamac’s search feature.
+    ```bash
+    sudo pacman -S steam
+    ```
 
-### Install Bottles
-1. In the search bar at the top, type **bottles**.
-2. Click on **Bottles** in the results.
-3. Click **Install**.
+### Enabling Proton for all games
 
-### Install ProtonUp-Qt
-1. Clear the search bar, then type **protonup-qt**.
-2. Make sure you select the one from the **AUR** tab if it doesn’t appear in the main search results.
-3. Click **Install**.
-
-### Install Lutris
-1. Search for **lutris**.
-2. Click **Install**.
-
-### Install Steam
-1. Search for **steam**.
-2. Click **Install**.
-3. When prompted, approve any **extra packages** Steam needs.
-
-### Install Heroic Games Launcher
-1. Search for **heroic-games-launcher-bin**.
-2. This package will usually appear in the **AUR** tab — click it.
-3. Click **Install**.
+By default, Steam only enables Proton for a curated list of games. You can enable it for all games by going to `Steam > Settings > Steam Play` and checking the box for "Enable Steam Play for all other titles".
 
 ---
 
-## ⏳ 4. Apply and Wait
-- After marking each package for installation, click **Apply** in the bottom right corner.
-- Pamac will:
-  - Download the necessary files
-  - Build AUR packages where needed (this can take a while depending on your system)
-- You may be prompted to confirm and enter your password again.
+## 3. Lutris
+
+Lutris is an open-source gaming platform that allows you to install and manage games from a variety of sources, including GOG, Humble Bundle, and Epic Games Store. It also provides community-maintained installation scripts for many games.
+
+### Installation
+
+*   **Using Pamac (GUI):**
+    1.  Open Pamac.
+    2.  Search for `lutris`.
+    3.  Click **Install**.
+
+*   **Using pacman (CLI):**
+
+    ```bash
+    sudo pacman -S lutris
+    ```
 
 ---
 
-## 🖥 5. After Installation
+## 4. Heroic Games Launcher
 
-Once everything is installed, you can launch them from your applications menu:
+The Heroic Games Launcher is an open-source alternative to the Epic Games Store and GOG Galaxy. It allows you to download and play your games from those stores on Linux.
 
-- **Steam** – Installs its runtime on first launch; you can log in and start installing games.
-- **ProtonUp-Qt** – Use it to install Proton-GE versions for Steam or Lutris.
-- **Bottles** – Create isolated Wine environments for apps or games.
-- **Lutris** – Connect accounts and install games from multiple sources.
-- **Heroic Games Launcher** – Log in to Epic, GOG, or Amazon Games and install your games.
+### Installation
+
+*   **Using Pamac (GUI):**
+    1.  Open Pamac and ensure that AUR support is enabled (see the [Installation Guide](installation.md#enabling-aur-support)).
+    2.  Search for `heroic-games-launcher-bin`.
+    3.  Click **Install**.
+
+*   **Using yay (CLI):**
+
+    ```bash
+    yay -S heroic-games-launcher-bin
+    ```
 
 ---
 
-## 💡 Tips for Best Results
-- Restart your system after installing these apps to make sure everything is set up correctly.
-- Keep **AUR updates enabled** so your games and tools stay current.
-- Some games may need extra dependencies; Lutris often prompts you to install them automatically.
-- For Steam games that need newer Proton versions, open **ProtonUp-Qt** and install the latest Proton-GE, then select it in Steam’s game settings.
+## 5. Proton-GE
+
+Proton-GE is a community-maintained version of Proton that often includes fixes and features that are not yet available in the official version. It can be useful for running games that do not work with the standard Proton.
+
+To easily manage Proton-GE versions, you can use `ProtonUp-Qt`.
+
+### Installation of ProtonUp-Qt
+
+*   **Using Pamac (GUI):**
+    1.  Open Pamac and ensure that AUR support is enabled.
+    2.  Search for `protonup-qt`.
+    3.  Click **Install**.
+
+*   **Using yay (CLI):**
+
+    ```bash
+    yay -S protonup-qt
+    ```
+
+Once installed, you can use ProtonUp-Qt to install the latest version of Proton-GE and then select it in the compatibility settings for a game in Steam.
 
 ---
 
-✅ **You’re now ready to enjoy gaming on Linux!**
+## 6. Performance Tips
 
+### GameMode
+
+GameMode is a daemon that allows games to request a set of optimizations to be temporarily applied to the host OS. This can improve gaming performance.
+
+#### Installation
+
+```bash
+sudo pacman -S gamemode
+```
+
+To use it, add `gamemoderun %command%` to the launch options of a game in Steam.
+
+### Gaming Kernels
+
+There are several community-maintained kernels that are optimized for gaming, such as `linux-zen` and `linux-tkg`. These kernels often include features that can improve gaming performance and reduce input latency. You can install them from the official repositories or the AUR.

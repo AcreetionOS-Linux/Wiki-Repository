@@ -7,13 +7,14 @@ theme:
 docs_dir: docs
 nav:
   - Home: index.md
-  - Why AcreetionOS Exists: Why.md
-  - Here is the installation instructions: installation.md
-  - Detailed install instuctions with images: detailed.md
-  - T2 Notes: displayconfigurationt2.md
-  - Are you wanting to report something?: problems.md
-  - What makes us Different?: releasemodel.md
-  - AcreetionOS Cinnamon: AcreetionOS-Cinnamon.md
-  - AcreetionOS GNOME: AcreetionOS-GNOME.md
-  - Benchmarking on AcreetionOS: benchmark.md
-  - Gaming in it's Simplest Form: gaming.md
+  - The AcreetionOS Philosophy: Why.md
+  - Installation Guide: installation.md
+  - Calamares Installer Walkthrough: detailed.md
+  - Fractional Scaling on GNOME for High-DPI Displays: displayconfigurationt2.md
+  - Common Problems and Solutions: problems.md
+  - Contributing to AcreetionOS: contributing.md
+  - AcreetionOS Release Model: releasemodel.md
+  - AcreetionOS: Cinnamon Edition: AcreetionOS-Cinnamon.md
+
+  - Gaming Benchmarking on AcreetionOS: benchmark.md
+  - Gaming on AcreetionOS: gaming.md
