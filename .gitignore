@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+.venv
+.venv-docs
+
+# Sphinx / Docs
+docs/_build/
+site/
+
+# Virtualenvs
+venv/
+.env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

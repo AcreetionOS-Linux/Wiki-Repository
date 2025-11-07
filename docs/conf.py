@@ -15,7 +15,7 @@ release = '1.0.0'
 
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx_favicon'
+    'sphinx_favicon',
     'sphinx.ext.napoleon',      # For Google/NumPy style docstrings
     'sphinx.ext.viewcode',      # Add links to highlighted source code
     'sphinx.ext.githubpages',   # Creates .nojekyll for GitHub Pages

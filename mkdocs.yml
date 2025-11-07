@@ -13,7 +13,7 @@ nav:
   - Common Problems and Solutions: problems.md
   - Contributing to AcreetionOS: contributing.md
   - AcreetionOS Release Model: releasemodel.md
-  - AcreetionOS: Cinnamon Edition: AcreetionOS-Cinnamon.md
+  - "AcreetionOS: Cinnamon Edition": AcreetionOS-Cinnamon.md
 
   - Gaming Benchmarking on AcreetionOS: benchmark.md
   - Gaming on AcreetionOS: gaming.md
