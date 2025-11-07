@@ -2,7 +2,7 @@
 
 Welcome to AcreetionOS. We're a community of developers and users who believe that your operating system should serve you, not the other way around. We started this project because we were tired of the bloat, the telemetry, and the corporate agendas that drive mainstream OS development. Our philosophy is simple: build a fast, clean, and reliable system that puts you in control.
 
-This wiki is the heart of our documentation. It's written by us—the developers—and by community members like you. It's here to help you get the most out of AcreetionOS, whether you're a seasoned Linux user or just starting your journey.
+This wiki is the heart of our documentation. It's written by us—the developers—and by community members like you. It's here to helping you get the most out of AcreetionOS, whether you're a seasoned Linux user or just starting your journey.
 
 ---
 
